@@ -8,18 +8,17 @@ import FormState from "./pages/FormState";
 function App() {
   return (
     <Router>
-    <nav>
-  <ul>
-    <li><Link to="/form">Form (use layout only)</Link></li>
-    <li><Link to="/form-ref">Form (useRef)</Link></li>
-    <li><Link to="/form-state">Form (useState)</Link></li>
-  </ul>
-</nav>
-
+      <nav>
+        <ul>
+          <li><Link id="form-link" to="/">Form Layout</Link></li>
+          <li><Link id="form-ref-link" to="/form-ref">Form with useRef</Link></li>
+          <li><Link id="form-state-link" to="/form-state">Form with useState</Link></li>
+        </ul>
+      </nav>
 
       {/* Replace Routes with Switch */}
       <Switch>
-          <Route path="/form" component={Form} />
+        <Route exact path="/" component={Form} />
         <Route path="/form-ref" component={FormRef} />
         <Route path="/form-state" component={FormState} />
       </Switch>
