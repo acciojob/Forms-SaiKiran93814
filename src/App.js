@@ -1,28 +1,26 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-
-import Form from "../src/components/Form.js";
-import FormRef from "../src/components/FormRef.js";
-import FormState from "../src/components/FormState.js";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Form from "./pages/Form";
+import FormRef from "./pages/FormRef";
+import FormState from "./pages/FormState";
 
 function App() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>React Form Sections</h1>
+    <Router>
       <nav>
         <ul>
-          <li><Link to="/form" id="form-link">Form Layout</Link></li>
-          <li><Link to="/form-ref" id="form-ref-link">Form with useRef</Link></li>
-          <li><Link to="/form-state" id="form-state-link">Form with useState</Link></li>
+          <li><Link id="form-link" to="/">Form Layout</Link></li>
+          <li><Link id="form-ref-link" to="/form-ref">Form with useRef</Link></li>
+          <li><Link id="form-state-link" to="/form-state">Form with useState</Link></li>
         </ul>
       </nav>
 
-      <Routes>
-        <Route path="/form" element={<Form />} />
-        <Route path="/form-ref" element={<FormRef />} />
-        <Route path="/form-state" element={<FormState />} />
-      </Routes>
-    </div>
+      {/* Replace Routes with Switch */}
+      <Switch>
+        <Route exact path="/" component={Form} />
+        <Route path="/form-ref" component={FormRef} />
+        <Route path="/form-state" component={FormState} />
+      </Switch>
+    </Router>
   );
 }
 

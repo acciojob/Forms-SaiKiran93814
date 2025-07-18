@@ -18,7 +18,7 @@
     "jsdom": "^16.4.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-router-dom": "^7.6.3",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "^5.0.1",
     "style-loader": "^1.2.1",
     "webpack-cli": "^3.3.12"
