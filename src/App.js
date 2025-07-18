@@ -1,3 +1,5 @@
+import React from "react"; // ✅ Must be at the top
+
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Form from "./pages/Form";
 import FormRef from "./pages/FormRef";
